@@ -8,7 +8,7 @@ public class PlayerInteract : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        //anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -22,7 +22,9 @@ public class PlayerInteract : MonoBehaviour
         if (collider.gameObject.tag == "door")
         {
             Debug.Log("Open");
-            anim.Play("Open");
+                anim.Play("Base Layer.DoorDouble_Open", -1, 0);
+           
+           
         }
     }
 }
