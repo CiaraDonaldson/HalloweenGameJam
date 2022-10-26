@@ -4,26 +4,11 @@ using UnityEngine;
 
 public class AudioPlayer : MonoBehaviour
 {
-   
-    public float time = 3;
-    // Start is called before the first frame update
+    public AudioSource audioSource;
+    public float delay = 4;
+
     void Start()
     {
-        
+        audioSource.PlayDelayed(delay);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (time > 0)
-        {
-            time -= Time.deltaTime;
-        }
-        else
-        {
-          
-            GetComponent<AudioSource>().Play();
-        }
-    }
-   
 }
