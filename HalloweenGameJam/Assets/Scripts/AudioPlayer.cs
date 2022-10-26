@@ -4,22 +4,26 @@ using UnityEngine;
 
 public class AudioPlayer : MonoBehaviour
 {
-    public AudioSource Audio;
-    public int seconds = 3;
+   
+    public float time = 3;
     // Start is called before the first frame update
     void Start()
     {
-        playAudio();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (time > 0)
+        {
+            time -= Time.deltaTime;
+        }
+        else
+        {
+          
+            GetComponent<AudioSource>().Play();
+        }
     }
-    public IEnumerator playAudio()
-    {
-        yield return new WaitForSeconds(seconds);
-        Audio.Play(0);
-    }
+   
 }
